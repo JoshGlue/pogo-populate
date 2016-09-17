@@ -1,0 +1,18 @@
+{
+  "name": "pogo-fillmap",
+  "version": "0.0.1",
+  "description": "This module fills the POGOserver with random spawns, pokestops and gyms. The locations of the POIs are based on where players are situated. Pokemons won't spawn in the middle of the ocean (unless someone is playing there) ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/joshGlue/pogo-fillmap"
+  },
+  "keywords": [
+    "pogoserver"
+  ],
+  "author": "joshGlue",
+  "license": "ISC"
+}
