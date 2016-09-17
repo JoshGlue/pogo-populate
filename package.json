@@ -14,5 +14,8 @@
     "pogoserver"
   ],
   "author": "joshGlue",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pokerare": "^0.1.1"
+  }
 }
