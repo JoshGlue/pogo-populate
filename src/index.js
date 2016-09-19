@@ -3,13 +3,12 @@ import * as cfg from "./cfg";
 import db from "./db";
 import pokemon from "./pokemon";
 
-export default class FillMap {
+export default class populate {
 
     constructor(config) {
         cfg.setCfg(config);
         this.CFG = config;
-        this.db = new db();
-      
+        this.db = new db();      
         this.pokemoninstance = new pokemon(this.db);
 
 
@@ -18,5 +17,6 @@ export default class FillMap {
     createRandomPokemon(lat, lon) {
         return this.pokemoninstance.createRandomPokemon(lat, lon)
     }
+    
 }
 

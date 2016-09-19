@@ -1,1 +1,5 @@
 src
+.gitignore
+.babelrc
+*test.js
+*cfg_file.js

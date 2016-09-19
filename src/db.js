@@ -9,7 +9,7 @@ export default class db {
 
     constructor() {
         this.CFG = cfg.getCfg();
-        this.setupDatabaseConnection(true);
+        this.setupDatabaseConnection();
     }
 
 
@@ -27,8 +27,9 @@ export default class db {
     }
 
     connect() {
+        let self = this;
         return new Promise((resolve) => {
-            connection.connect((error) => {
+            self.connection.connect((error) => {
                 if (error) {
                     print("MySQL " + error, 31);
                     return void 0;
@@ -39,8 +40,9 @@ export default class db {
 
 
     closeConnection() {
+        let self = this;
         return new Promise((resolve)=> {
-            this.db.end(() => {
+            self.connection.end(() => {
                 resolve("closed properly");
             });
         })

@@ -14,11 +14,11 @@ export default {
     API_ALLOWED_HOSTS: ["localhost", "127.0.0.1"],
 
     //Populate map with Pokemons
-    //In kilometers
-    DISTANCE: 2,
+    RANDOM_SPAWNS_AT_PLAYERS: true,
+    DISTANCE: 2, //In kilometers
+    RARITY_RATE: 1.5, //The higher, the less likely rare Pokemon will appear
     NUMBER_SPAWN: 100,
     POKEMON_PER_SPAWN: 5,
-
 
     // Server settings
     MAX_CONNECTIONS: 64,
