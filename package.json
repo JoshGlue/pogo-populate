@@ -1,14 +1,16 @@
 {
-  "name": "pogo-fillmap",
+  "name": "pogo-populate",
   "version": "0.0.1",
   "description": "This module fills the POGOserver with random spawns, pokestops and gyms. The locations of the POIs are based on where players are situated. Pokemons won't spawn in the middle of the ocean (unless someone is playing there) ",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.github.com/joshGlue/pogo-fillmap"
+    "url": "https://www.github.com/joshGlue/pogo-populate"
   },
   "keywords": [
     "pogoserver"
@@ -16,6 +18,12 @@
   "author": "joshGlue",
   "license": "ISC",
   "dependencies": {
-    "pokerare": "^0.1.1"
+    "mysql": "^2.11.1",
+    "pokerare": "^0.1.1",
+    "s2-geometry": "^1.2.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0"
   }
 }
