@@ -13,11 +13,11 @@ export default {
     API_PASSWORD: "",
     API_ALLOWED_HOSTS: ["localhost", "127.0.0.1"],
 
-    //Fill map with Pokemons
-    //In Meters
-    DISTANCE: 400,
-    NUMBER_SPAWN: 500,
-    POKEMON_PER_SPAWN: 15,
+    //Populate map with Pokemons
+    //In kilometers
+    DISTANCE: 2,
+    NUMBER_SPAWN: 100,
+    POKEMON_PER_SPAWN: 5,
 
 
     // Server settings

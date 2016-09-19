@@ -8,7 +8,8 @@ export default class FillMap {
     constructor(config) {
         cfg.setCfg(config);
         this.CFG = config;
-        this.db = new db()
+        this.db = new db();
+      
         this.pokemoninstance = new pokemon(this.db);
 
 
