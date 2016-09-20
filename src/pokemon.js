@@ -12,9 +12,9 @@ export default class pokemon {
     constructor(db) {
         this.db = db;
         this.CFG = cfg.getCfg()
-        this.distance = this.CFG.DISTANCE || 2;
-        this.number_spawn = this.CFG.NUMBER_SPAWN || 100;
-        this.pokemon_per_spawn = this.CFG.POKEMON_PER_SPAWN || 5;
+        this.radius = this.CFG.RADIUS || 2;
+        this.number_spawns = this.CFG.NUMBER_SPAWNS || 500;
+        this.pokemon_per_spawn = this.CFG.POKEMON_PER_SPAWN || 1;
         this.rarity_rate = this.CFG.RARITY_RATE || 1.5
     }
 
@@ -24,8 +24,8 @@ export default class pokemon {
 
         let searchquery =
             `SELECT count(*) as total FROM pogosql.spawn_points WHERE 
-longitude between ${lon} - 0.009009009 * ${ this.distance  } AND ${lon} + 0.009009009 * ${ this.distance } AND 
-latitude between ${lat} - 0.009009009 * ${ this.distance  } AND ${lat} +  0.009009009 * ${ this.distance }`;
+longitude between ${lon} - 0.009009009 * ${ this.radius  } AND ${lon} + 0.009009009 * ${ this.radius } AND 
+latitude between ${lat} - 0.009009009 * ${ this.radius  } AND ${lat} +  0.009009009 * ${ this.radius }`;
 
         let insertquery = 'INSERT INTO spawn_points (cell_id,latitude,longitude,encounters,update_interval)VALUES ?'
         let self = this;
@@ -35,7 +35,7 @@ latitude between ${lat} - 0.009009009 * ${ this.distance  } AND ${lat} +  0.0090
                 if (e) print(e, 31);
                 if (rows && rows.length) {
 
-                    let numberofspawns = this.number_spawn - rows[0].total;
+                    let numberofspawns = this.number_spawns - rows[0].total;
                     if (numberofspawns > 0) {
                         this.createRandomSpawns(numberofspawns, lat, lon).then((res)=> {
 
@@ -71,7 +71,7 @@ latitude between ${lat} - 0.009009009 * ${ this.distance  } AND ${lat} +  0.0090
                 for (let y = 0; y < pokemon.length; y++) {
                     pokemonArray.push(pokemon[y].id);
                 }
-                let cell_id = Cell.getIdByPosition(lat, lon, 15);
+                let cell_id = Cell.getIdByPosition(location[0], location[1], 15);
 
                 result.push([cell_id, location[0], location[1], JSON.stringify(pokemonArray), Math.floor(Math.random() * 29) + 2]);
 
@@ -87,8 +87,8 @@ latitude between ${lat} - 0.009009009 * ${ this.distance  } AND ${lat} +  0.0090
             , x0 = lon
             , latmultiplier = Math.random() < 0.5 ? -1 : 1
             , lonmultiplier = Math.random() < 0.5 ? -1 : 1
-            , u = Math.random() * this.distance * 0.009009009
-            , v = Math.random() * this.distance * 0.009009009
+            , u = Math.random() * this.radius * 0.009009009
+            , v = Math.random() * this.radius * 0.009009009
             , y1 = latmultiplier * u
             , x1 = lonmultiplier * v
             , newY = y0 + y1,

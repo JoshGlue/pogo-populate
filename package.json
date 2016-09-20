@@ -1,6 +1,6 @@
 {
   "name": "pogo-populate",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "This module fills the POGOserver with random pokemon spawns, pokestops and gyms (last two need to be implemented). The locations of the POIs are based on where players are situated. Pokemons won't spawn in the middle of the ocean (unless someone is playing there) ",
   "main": "./dist/index.js",
   "scripts": {

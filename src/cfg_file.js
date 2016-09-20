@@ -15,9 +15,9 @@ export default {
 
     //Populate map with Pokemons
     RANDOM_SPAWNS_AT_PLAYERS: true,
-    DISTANCE: 2, //In kilometers
+    RADIUS: 2, //In kilometers
     RARITY_RATE: 1.5, //The higher, the less likely rare Pokemon will appear
-    NUMBER_SPAWN: 100,
+    NUMBER_SPAWNS: 100,
     POKEMON_PER_SPAWN: 5,
 
     // Server settings

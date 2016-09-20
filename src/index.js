@@ -14,6 +14,11 @@ export default class populate {
 
     }
 
+    /**
+     * @param {Number} lat
+     * @param {Number} lon
+     * @return {Promise}
+     */
     createRandomPokemon(lat, lon) {
         return this.pokemoninstance.createRandomPokemon(lat, lon)
     }

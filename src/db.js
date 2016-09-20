@@ -9,7 +9,7 @@ export default class db {
 
     constructor() {
         this.CFG = cfg.getCfg();
-        this.setupDatabaseConnection();
+        this.setupDatabaseConnection(true);
     }
 
 
