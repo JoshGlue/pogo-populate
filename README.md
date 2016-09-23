@@ -1,4 +1,4 @@
-# Pogo-populate <a href="https://www.npmjs.com/package/pogo-populate"><img src="https://img.shields.io/npm/v/pogo-populate.svg?style=flat-square" alt="NPM Version" /></a> [![npm](https://img.shields.io/npm/dm/pogo-populate.svg?maxAge=2592000)](https://www.npmjs.com/package/pogo-populate)
+# Pogo-populate <a href="https://www.npmjs.com/package/pogo-populate"><img src="https://img.shields.io/npm/v/pogo-populate.svg?style=flat-square" alt="NPM Version" /></a> [![npm](https://img.shields.io/npm/dm/pogo-populate.svg)](https://www.npmjs.com/package/pogo-populate)
 
 Populate POGOserver with random Pokémon spawns, pokéstops and gyms. 
 **(Pokéstops and gyms need to be implemented)**
